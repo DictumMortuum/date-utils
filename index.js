@@ -1,18 +1,21 @@
 'use strict';
 
 const startOfDay = d => {
-  d.setHours(0, 0, 0, 0);
-  return d;
+  let t = new Date(d);
+  t.setHours(0, 0, 0, 0);
+  return t;
 };
 
 const endOfDay = d => {
-  d.setHours(23, 59, 59, 999);
-  return d;
+  let t = new Date(d);
+  t.setHours(23, 59, 59, 999);
+  return t;
 };
 
 const daysAgo = (d, n)=> {
-  d.setDate(d.getDate() - (n || 30));
-  return d;
+  let t = new Date(d);
+  t.setDate(d.getDate() - (n || 30));
+  return t;
 };
 
 module.exports = {
