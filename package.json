@@ -1,0 +1,23 @@
+{
+  "name": "date-utils",
+  "version": "0.0.1",
+  "description": "Not worth it using moment.js just for startOf/endOf.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DictumMortuum/date-utils.git"
+  },
+  "keywords": [
+    "startOf",
+    "endOf"
+  ],
+  "author": "Dimitris Raviolos <dictummortuum339@gmail.com> (https://github.com/DictumMortuum)",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/DictumMortuum/date-utils/issues"
+  },
+  "homepage": "https://github.com/DictumMortuum/date-utils#readme"
+}
