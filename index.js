@@ -21,28 +21,26 @@ module.exports = {
   },
   timeSince: function(d) {
     // http://stackoverflow.com/a/3177838
-    var seconds = Math.floor((new Date() - d) / 1000);
-    var interval = Math.floor(seconds / 31536000);
 
-    if (interval > 1) {
-      return interval + ' years';
+    function plural(i, item) {
+      return i + ' ' + item + 's';
     }
-    interval = Math.floor(seconds / 2592000);
-    if (interval > 1) {
-      return interval + ' months';
+
+    function singular(item) {
+      return '1 ' + item;
     }
-    interval = Math.floor(seconds / 86400);
-    if (interval > 1) {
-      return interval + ' days';
+
+    var intervals = [31536000, 2592000, 86400, 3600, 60, 1];
+    var formats = ['year', 'month', 'day', 'hour', 'minute', 'second'];
+    var seconds = Math.floor((new Date() - d) / 1000);
+
+    for (var i = 0; i < intervals.length; i++) {
+      var interval = Math.floor(seconds / intervals[i]);
+      if (interval == 1) {
+        return singular(formats[i]);
+      } else if (interval > 1) {
+        return plural(interval, formats[i]);
+      }
     }
-    interval = Math.floor(seconds / 3600);
-    if (interval > 1) {
-      return interval + ' hours';
-    }
-    interval = Math.floor(seconds / 60);
-    if (interval > 1) {
-      return interval + ' minutes';
-    }
-    return Math.floor(seconds) + ' seconds';
   }
 };
