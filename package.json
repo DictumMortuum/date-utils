@@ -1,6 +1,6 @@
 {
   "name": "date-utils",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Not worth it using moment.js just for startOf/endOf.",
   "main": "index.js",
   "scripts": {
