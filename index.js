@@ -23,11 +23,11 @@ module.exports = {
     // http://stackoverflow.com/a/3177838
 
     function plural(i, item) {
-      return i + ' ' + item + 's';
+      return i + ' ' + item + 's ago';
     }
 
     function singular(item) {
-      return '1 ' + item;
+      return '1 ' + item + ' ago';
     }
 
     var intervals = [31536000, 2592000, 86400, 3600, 60, 1];
@@ -42,5 +42,7 @@ module.exports = {
         return plural(interval, formats[i]);
       }
     }
+
+    return 'just now';
   }
 };
